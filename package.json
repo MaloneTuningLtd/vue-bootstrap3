@@ -1,0 +1,33 @@
+{
+  "name": "vue-bootstrap-3",
+  "version": "4.0.0-alpha.4",
+  "private": true,
+  "scripts": {
+    "storybook": "start-storybook -p 9009 -c .storybook"
+  },
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "vue": "^2.5.16",
+    "vuex": "^3.0.0"
+  },
+  "devDependencies": {
+    "@storybook/vue": "4.0.0-alpha.4",
+    "babel-core": "^6.26.3",
+    "babel-helper-vue-jsx-merge-props": "^2.0.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-vue-jsx": "^3.7.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-vue": "^2.0.2",
+    "cross-env": "^5.1.4",
+    "file-loader": "^1.1.11",
+    "svg-url-loader": "^2.3.2",
+    "vue-loader": "^14.2.2",
+    "webpack": "^4.8.0",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "peerDependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

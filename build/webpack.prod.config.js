@@ -34,13 +34,4 @@ module.exports = merge(baseWebpackConfig, {
       },
     ]
   },
-  optimization: {
-    runtimeChunk: false,
-    splitChunks: {
-      chunks: 'all',
-    },
-  },
-  performance: {
-    hints: false,
-  },
 });

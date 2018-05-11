@@ -1,8 +1,10 @@
 {
   "presets": [
-    ["env", { "modules": false }],
-    "stage-0",
-    "vue"
+    ["@babel/preset-env", { "modules": false, "useBuiltins": false }],
+    ["vue", { "eventModifiers": false, "vModel": false }]
   ],
-  "plugins": ["transform-vue-jsx"]
+  "plugins": [
+    "@babel/transform-runtime",
+    "transform-vue-jsx"
+  ]
 }

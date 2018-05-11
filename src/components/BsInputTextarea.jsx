@@ -2,6 +2,10 @@ import BsFormMixin from '../mixins/bsFormMixin'
 
 export default {
   props: {
+    placeholder: {
+      type: String,
+      required: false
+    },
     rows: {
       type: [Number, String],
       required: false,
@@ -24,6 +28,7 @@ export default {
     const inputTextarea =
       <textarea
         class="form-control"
+        placeholder={this.placeholder}
         rows={this.rows}
         value={this.value}
         onInput={this.updateValue}>

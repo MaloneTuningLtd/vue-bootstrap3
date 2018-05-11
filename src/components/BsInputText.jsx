@@ -11,6 +11,10 @@ export default {
       type: String,
       required: true,
     },
+    placeholder: {
+      type: String,
+      required: false
+    }
   },
   mixins: [BsFormMixin],
   methods: {
@@ -24,6 +28,7 @@ export default {
     const inputText =
       <input
         class="form-control"
+        placeholder={this.placeholder}
         type={this.type}
         value={this.value}
         onInput={this.updateValue}

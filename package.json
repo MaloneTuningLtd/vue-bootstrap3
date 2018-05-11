@@ -1,7 +1,9 @@
 {
   "name": "vue-bootstrap-3",
   "version": "4.0.0-alpha.4",
-  "private": true,
+  "main": "dist/vuebootstrap3.js",
+  "module": "dist/vuebootstrap3.js",
+  "unpkg": "dist/vuebootstrap3.js",
   "scripts": {
     "build": "webpack --config build/webpack.prod.config.js --progress --hide-modules",
     "storybook": "start-storybook -p 9009 -c .storybook"

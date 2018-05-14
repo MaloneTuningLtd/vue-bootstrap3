@@ -1,4 +1,4 @@
-import BsFormMixin from '../mixins/bsFormMixin';
+import BsFormMixin from '@/mixins/bsFormMixin';
 
 export default {
   props: {

@@ -1,4 +1,5 @@
-import colors from '../common/colors';
+import colors from '@/common/colors';
+import handleListeners from '@/lib/handleListeners';
 
 const tagTypes = [
   'a',
@@ -26,21 +27,16 @@ export default {
     },
   },
   render(h) {
-    const tag = this.tag;
-    const classList = ['btn', `btn-${this.color}`];
+    const ElementTag = this.tag;
     const text = this.text;
 
-    const data = {
-      class: classList,
-      on: this.$listeners,
-    };
+    const classList = ['btn', `btn-${this.color}`];
+    const listeners = handleListeners(this.$listeners);
 
-    return h(
-      tag,
-      data,
-      [
-        text
-      ]
-    );
+    return (
+      <ElementTag class={classList} {...listeners}>
+        {text}
+      </ElementTag>
+    )
   }
 };

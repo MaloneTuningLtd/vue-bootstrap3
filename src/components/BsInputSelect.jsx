@@ -1,5 +1,5 @@
-import BsFormMixin from '../mixins/bsFormMixin';
-import BsOption from './BsOption';
+import BsFormMixin from '@/mixins/bsFormMixin';
+import BsOption from '@/components/BsOption';
 
 export default {
   components: {

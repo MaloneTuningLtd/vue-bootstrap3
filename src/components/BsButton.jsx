@@ -32,6 +32,7 @@ export default {
 
     const data = {
       class: classList,
+      on: this.$listeners,
     };
 
     return h(

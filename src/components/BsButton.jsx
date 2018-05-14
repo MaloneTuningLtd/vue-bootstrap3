@@ -1,4 +1,5 @@
 import colors from '../common/colors';
+import handleClassList from '../common/handleClassList';
 
 const tagTypes = [
   'a',
@@ -27,15 +28,25 @@ export default {
     },
   },
   render(h, context) {
-    const element = context.props.tag;
-    const classes = ['btn', `btn-${context.props.color}`];
-
+    const tag = context.props.tag;
+    const classList = handleClassList(
+      context.data.staticClass,
+      context.data.class,
+      ['btn', `btn-${context.props.color}`]
+    );
     const text = context.props.text;
 
-    return (
-      <element class={classes} {...context.data}>
-        {{text}}
-      </element>
+    const data = {
+      attr: context.data.attr,
+      class: classList,
+    };
+
+    return h(
+      tag,
+      data,
+      [
+        text
+      ]
     );
   }
 };

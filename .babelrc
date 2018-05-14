@@ -3,8 +3,13 @@
     ["@babel/preset-env", { "modules": false, "useBuiltins": false }],
     ["vue", { "eventModifiers": false, "vModel": false }]
   ],
+  "env": {
+    "test": {
+      "presets": ["@babel/preset-env"]
+    }
+  },
   "plugins": [
-    "@babel/transform-runtime",
+    "@babel/plugin-transform-runtime",
     "transform-vue-jsx"
   ]
 }

@@ -12,4 +12,5 @@ function plugin (Vue) {
 
 export default plugin;
 
-// TODO: export individual components /shrug
+// TODO: export individual components
+// shrug

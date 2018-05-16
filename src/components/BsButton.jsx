@@ -35,6 +35,7 @@ export default {
 
     return (
       <ElementTag class={classList} {...listeners}>
+        {this.$slots.icon}
         {text}
       </ElementTag>
     )

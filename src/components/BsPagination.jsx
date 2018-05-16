@@ -52,7 +52,7 @@ export default {
       <ul class="pagination">
         <li class={{ disabled: this.current === 1 }}><a onClick={this.previous} href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
           {pages}
-        <li class={{ disabled: this.current === this.total }}><a onClick={this.next} href="#" aria-label="Next"><span aria-hidden="true">&laquo;</span></a></li>
+        <li class={{ disabled: this.current === this.total }}><a onClick={this.next} href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
       </ul>
     );
   },

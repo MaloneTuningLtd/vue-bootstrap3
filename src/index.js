@@ -10,7 +10,16 @@ function plugin (Vue) {
   });
 };
 
+// install by default if using the script tag
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(plugin);
+}
+
 export default plugin;
 
-// TODO: export individual components
-// shrug
+const version = '__VERSION__';
+
+export {
+  version,
+  components,
+};

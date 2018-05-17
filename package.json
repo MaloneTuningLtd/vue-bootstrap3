@@ -1,6 +1,6 @@
 {
   "name": "vue-bootstrap-3",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-beta.0",
   "author": "Khoa Nguyen <khoa.tan.nguyen.96@gmail.com",
   "license": "MIT",
   "repository": {
@@ -8,13 +8,15 @@
     "url": "https://github.com/khoanguyen96/vue-bootstrap3"
   },
   "main": "dist/vue-bootstrap-3.common.js",
+  "module": "dist/vue-bootstrap-3.esm.js",
   "browser": "dist/vue-bootstrap-3.min.js",
   "unpkg": "dist/vue-bootstrap-3.min.js",
   "scripts": {
     "clean": "rimraf dist",
-    "build": "yon run clean && yon run build:common && yon run build:browser",
+    "build": "yon run clean && yon run build:common && yon run build:module && yon run build:browser",
     "build:common": "cross-env NODE_ENV=common webpack --config build/webpack.common.config.js --progress --hide-modules",
     "build:browser": "cross-env NODE_ENV=browser webpack --config build/webpack.browser.config.js --progress --hide-modules",
+    "build:module": "cross-env NODE_ENV=module webpack --config build/webpack.browser.config.js --progress --hide-modules",
     "storybook": "start-storybook -p 9009 -c .storybook",
     "test": "jest --config test/jest.conf.js"
   },

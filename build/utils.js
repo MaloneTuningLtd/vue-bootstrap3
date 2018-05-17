@@ -7,7 +7,18 @@ const {
 } = require('../package.json');
 
 const authorName = author.replace(/\s+<.*/, '');
-const minExt = process.env.NODE_ENV === 'browser' ? '.min' : '';
+
+let minExt;
+switch (process.env.NODE_ENV) {
+  case 'browser':
+    minExt = '.min';
+    break;
+  case 'module':
+    minExt = '.esm'
+    break;
+  default:
+    minExt = '';
+}
 
 exports.author = authorName;
 exports.version = version;

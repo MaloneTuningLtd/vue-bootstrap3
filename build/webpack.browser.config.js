@@ -9,4 +9,7 @@ module.exports = merge(base, {
     library: moduleName,
     libraryTarget: 'umd',
   },
+  optimization: {
+    minimize: process.env.NODE_ENV === 'browser',
+  },
 });

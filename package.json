@@ -1,19 +1,24 @@
 {
   "name": "vue-bootstrap-3",
-  "version": "4.0.0-alpha.4",
-  "main": "dist/vuebootstrap3.js",
-  "module": "dist/vuebootstrap3.js",
-  "unpkg": "dist/vuebootstrap3.js",
+  "version": "1.0.0-alpha.4",
+  "author": "Khoa Nguyen <khoa.tan.nguyen.96@gmail.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/khoanguyen96/vue-bootstrap3"
+  },
+  "main": "dist/vue-bootstrap-3.common.js",
+  "browser": "dist/vue-bootstrap-3.min.js",
+  "unpkg": "dist/vue-bootstrap-3.min.js",
   "scripts": {
-    "build": "webpack --config build/webpack.prod.config.js --progress --hide-modules",
+    "clean": "rimraf dist",
+    "build": "yon run clean && yon run build:common && yon run build:browser",
+    "build:common": "cross-env NODE_ENV=common webpack --config build/webpack.common.config.js --progress --hide-modules",
+    "build:browser": "cross-env NODE_ENV=browser webpack --config build/webpack.browser.config.js --progress --hide-modules",
     "storybook": "start-storybook -p 9009 -c .storybook",
     "test": "jest --config test/jest.conf.js"
   },
-  "dependencies": {
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "vue": "^2.5.16"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.46",
     "@babel/helper-module-imports": "^7.0.0-beta.46",
@@ -30,19 +35,25 @@
     "babel-loader": "^8.0.0-beta.2",
     "babel-plugin-transform-vue-jsx": "^4.0.1",
     "babel-preset-vue": "^2.0.2",
-    "cross-env": "^5.1.4",
+    "cross-env": "^5.1.5",
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "jest": "^22.4.3",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
     "regenerator-runtime": "^0.11.1",
+    "rimraf": "^2.6.2",
     "svg-url-loader": "^2.3.2",
+    "uppercamelcase": "^3.0.0",
+    "vue": "^2.5.16",
     "vue-loader": "^14.2.2",
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.8.2",
     "webpack-cli": "^2.1.3",
     "webpack-dev-server": "^3.1.4",
-    "webpack-merge": "^4.1.2"
+    "webpack-merge": "^4.1.2",
+    "yarn-or-npm": "^2.0.4"
   },
   "peerDependencies": {
     "bootstrap": "^3.3.7"

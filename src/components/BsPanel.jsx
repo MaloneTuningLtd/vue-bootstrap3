@@ -15,7 +15,7 @@ export default {
     const classList = ['panel', `panel-${context.props.type}`];
 
     return (
-      <div class={classList}>
+      <div class={classList} {...context.data}>
         {!!context.props.heading &&
           <div class="panel-heading">{context.props.heading}</div>
         }

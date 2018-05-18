@@ -18,7 +18,8 @@
     "build:browser": "cross-env NODE_ENV=browser webpack --config build/webpack.browser.config.js --progress --hide-modules",
     "build:module": "cross-env NODE_ENV=module webpack --config build/webpack.browser.config.js --progress --hide-modules",
     "storybook": "start-storybook -p 9009 -c .storybook",
-    "test": "jest --config test/jest.conf.js"
+    "test": "jest --config test/jest.conf.js",
+    "postversion": "yon run build"
   },
   "dependencies": {},
   "devDependencies": {

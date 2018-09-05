@@ -22,7 +22,8 @@
     "postversion": "yon run build"
   },
   "dependencies": {
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "range": "^0.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

@@ -1,11 +1,25 @@
 {
   "presets": [
-    ["@babel/preset-env", { "modules": false, "useBuiltins": false }],
-    ["vue", { "eventModifiers": false, "vModel": false }]
+    [
+      "@babel/preset-env",
+      {
+        "modules": false,
+        "useBuiltins": false
+      }
+    ],
+    [
+      "vue",
+      {
+        "eventModifiers": false,
+        "vModel": false
+      }
+    ]
   ],
   "env": {
     "test": {
-      "presets": ["@babel/preset-env"]
+      "presets": [
+        "@babel/preset-env"
+      ]
     }
   },
   "plugins": [

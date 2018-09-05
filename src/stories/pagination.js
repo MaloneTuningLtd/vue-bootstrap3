@@ -36,7 +36,7 @@ storiesOf('Bootstrap Pagination', module)
         pagination: {
           current: 1,
           perPage: 15,
-          total: 380
+          total: 380,
         },
       }
     },

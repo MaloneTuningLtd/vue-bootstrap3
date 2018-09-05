@@ -1,4 +1,4 @@
-const range = (start, end) => [...Array(1 + end - start).keys()].map(v => start + v);
+import range from 'range'
 
 export default {
   props: {
@@ -50,8 +50,8 @@ export default {
       const { min, max } = this.pageRange;
 
       const pages = (!isRange)
-        ? range(0, this.numOfPages)
-        : range(min - 1, max);
+        ? range.range(1, this.numOfPages + 1)
+        : range.range(min, max + 1);
 
       return pages;
     }
@@ -83,7 +83,7 @@ export default {
   },
   render(h) {
     const pages = this.pages.map(page => (
-      <li><a onClick={this.navigateToPage} href="#" data-page={page + 1}>{page + 1}</a></li>
+      <li><a onClick={this.navigateToPage} href="#" data-page={page}>{page}</a></li>
     ));
 
     return (

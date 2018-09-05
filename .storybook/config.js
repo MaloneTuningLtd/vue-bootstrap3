@@ -14,6 +14,7 @@ function loadStories() {
   // You can require as many stories as you need.
   require('../src/stories/button');
   require('../src/stories/form');
+  require('../src/stories/pagination');
 }
 
 configure(loadStories, module);

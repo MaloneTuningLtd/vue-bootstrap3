@@ -21,7 +21,9 @@
     "test": "jest --config test/jest.conf.js",
     "postversion": "yon run build"
   },
-  "dependencies": {},
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  },
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@babel/helper-module-imports": "^7.0.0-beta.46",
@@ -31,7 +33,7 @@
     "@babel/preset-env": "^7.0.0-beta.46",
     "@babel/runtime": "^7.0.0-beta.46",
     "@sindresorhus/slugify": "^0.3.0",
-    "@storybook/vue": "4.0.0-alpha.4",
+    "@storybook/vue": "^3.4.10",
     "babel-core": "^7.0.0-bridge.0",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-jest": "^22.4.3",
@@ -39,7 +41,7 @@
     "babel-plugin-transform-vue-jsx": "^4.0.1",
     "babel-preset-vue": "^2.0.2",
     "cross-env": "^5.1.5",
-    "css-loader": "^0.28.11",
+    "css-loader": "^1.0.0",
     "file-loader": "^1.1.11",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "jest": "^22.4.3",
@@ -47,8 +49,10 @@
     "react-dom": "^16.3.2",
     "regenerator-runtime": "^0.11.1",
     "rimraf": "^2.6.2",
+    "style-loader": "^0.23.0",
     "svg-url-loader": "^2.3.2",
     "uppercamelcase": "^3.0.0",
+    "url-loader": "^1.1.1",
     "vue": "^2.5.16",
     "vue-loader": "^14.2.2",
     "vue-template-compiler": "^2.5.16",
@@ -57,8 +61,5 @@
     "webpack-dev-server": "^3.1.4",
     "webpack-merge": "^4.1.2",
     "yarn-or-npm": "^2.0.4"
-  },
-  "peerDependencies": {
-    "bootstrap": "^3.3.7"
   }
 }

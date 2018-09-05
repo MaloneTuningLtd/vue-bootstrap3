@@ -1,5 +1,11 @@
+const range = (start, end) => [...Array(1 + end - start).keys()].map(v => start + v);
+
 export default {
   props: {
+    range: {
+      type: Boolean,
+      required: false,
+    },
     current: {
       type: Number,
       required: true,
@@ -16,6 +22,38 @@ export default {
   computed: {
     numOfPages() {
       return Math.ceil(this.total / this.perPage);
+    },
+    pageRange() {
+      const slidingPages = 4;
+
+      // start with page1
+      // or start with the last ${slidingPages} (4) from the current page
+      let min = Math.max(1, this.current - slidingPages)
+
+      // if there's less pages on the left
+      // have more pages on the right...
+      const rightFloat = Math.max(0, slidingPages - (min - 1))
+      const max = Math.min(this.numOfPages, this.current + slidingPages + rightFloat)
+
+      // if there's less pages on the right (nearing the end)
+      // have more pages on the left
+      const leftFloat = Math.max(0, slidingPages - (this.numOfPages - max))
+      min = Math.max(1, this.current - slidingPages - leftFloat)
+
+      return {
+        min,
+        max,
+      };
+    },
+    pages() {
+      const isRange = this.range;
+      const { min, max } = this.pageRange;
+
+      const pages = (isRange)
+        ? range(0, this.numOfPages)
+        : range(min, max);
+
+      return pages;
     }
   },
   methods: {
@@ -44,7 +82,7 @@ export default {
     },
   },
   render(h) {
-    const pages = [...Array(this.numOfPages).keys()].map(page => (
+    const pages = this.pages.map(page => (
       <li><a onClick={this.navigateToPage} href="#" data-page={page + 1}>{page + 1}</a></li>
     ));
 

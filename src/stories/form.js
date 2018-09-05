@@ -68,4 +68,5 @@ storiesOf('Bootstrap Form', module)
         </bs-form>
       </container>
     `
-  }))
+  }));
+  

@@ -49,9 +49,9 @@ export default {
       const isRange = this.range;
       const { min, max } = this.pageRange;
 
-      const pages = (isRange)
+      const pages = (!isRange)
         ? range(0, this.numOfPages)
-        : range(min, max);
+        : range(min - 1, max);
 
       return pages;
     }
